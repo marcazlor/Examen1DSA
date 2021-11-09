@@ -1,45 +1,51 @@
-Implementation façade about Minimo1 using Singleton pattern. I also create a REST service that implements the functions delcared in the interface ProductManager
-
-Explanation about API:
-
-Services:
-
-1.Text /text
-Methods:
-	1. GET:
-		- Return "Got it!" /basic
-		- Return An Exception /exception
-		- Return Hello "username" given a username /users/:username
-
-2.Orders /orders
-Methods:
-	1. GET:
-		- Get all products in the list /products
-		- Get all products sorted by price /sortedbyprice
-		- Get all products sorted by number of sales /sortedbysales
-		- Get all orders of a user /:user
-	2. POST:
-		- Place an order /placeanorder/:user
-	3. DELETE:
-		- Serve an order /serveanorder
-
-Models:
-
-1. Usuario:
-	- String username
-
-2. Producto:
-	- String name
-	- Double price
-	- Integer sales
-
-3. Pedido:
-	1. LProducto:
-		- Integer q
-		- String producto
-	2. Usuario:
-		- String username
-
-4. LProducto:
-	- Integer q
-	- String username	
+La EETAC está interesada en construir un juego virtual que permita
+promocionar la escuela. Por este motivo, propone a sus alumnos de DSA la
+construcción de una prueba piloto con las siguientes operaciones:
+- Añadir un usuario
+- Listado de usuarios ordenado alfabéticamente
+- Consultar información de un usuario
+- Informar que un usuario pasa por un punto de interés (puerta, casilla X,
+puente, casilla Y, etc..)
+- Consultar los puntos de interés por los que un usuario pasa (orden en que se
+notifica)
+- Listado de usuarios que han pasado por un punto de interés
+- Listado de alumnos ordenado descendentemente por puntos de interés por
+los que han pasado.
+SE PIDE:
+PARTE I: 5 puntos
+1.-Identificar las entidades de información y sus propiedades. Podéis hacer una
+propuesta de atributos básica.
+2.- Especificación del componente que implementará las operaciones descritas
+anteriormente: interfaz Java
+3.- Implementación de una Fachada (patrón de diseño) que implemente el
+interfaz definido previamente. 
+2.1 Elección de las estructuras de datos
+2.3 La fachada deberá implementarse como un Singleton.
+2.4 Todos los métodos deberán tener una TRAZA (a nivel de INFO) de
+LOG4J que muestre el valor de los parámetros al inicio de los métodos y
+al final. También debe contemplarse trazas de otros niveles (ERROR o
+FATAL)
+4.- Implementación de un test (JUNIT) sobre el componente desarrollado 
+PARTE II: 5 puntos
+1.- Definir (servicio, operaciones, rutas, métodos HTTP, peticiones, respuestas,
+códigos de respuesta) e implementar un servicio REST que permita realizar las
+operaciones especificadas en la primera parte del ejercicio. Se recomienda que
+todas las operaciones deben retornar “objetos de transferencia” y evitar
+ciclos/relaciones. Si estos objetos de transferencia son complejos se complica
+la serialización/deserialización
+NOTA: El servicio debe utilizar el componente construido en el punto anterior
+NOTA: 
+- No se permite el uso de System.out.println
+- La gestión de dependencias (librerías) debe realizarse ÚNICAMENTE con
+Maven: junit, log4j, etc 
+- No se permite el uso de System.out.println
+- La entrega debe realizarse sobre un repositorio de GITHUB. En dicho
+repositorio debe existir un fichero README.md que describa el proyecto. NO
+SE DEBE REALIZAR NINGÚN PUSH hasta finalizar el ejercicio para evitar
+compartir el código entre compañeros. Si se comprueba un porcentaje
+de similitudes del código alto se presentará el caso al jefe de
+estudios con la propuesta de suspenso global de la asignatura.
+El fichero REAME.md debe explicar brevemente el desarrollo del ejercicio
+y el alcance del mismo (qué partes están desarrolladas y están
+funcionando y cuáles no).
+La entrega consistirá en un fichero de texto con el enlace de Github
