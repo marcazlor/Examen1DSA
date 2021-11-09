@@ -49,3 +49,6 @@ El fichero REAME.md debe explicar brevemente el desarrollo del ejercicio
 y el alcance del mismo (qué partes están desarrolladas y están
 funcionando y cuáles no).
 La entrega consistirá en un fichero de texto con el enlace de Github
+
+
+El ejercicio está casi completo, con todas las funciones funcionales, en la parte de test falta 1 o dos funciones por implementar
